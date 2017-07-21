@@ -27,6 +27,7 @@ $navbar-inverse-bg: #000;
   letter-spacing: -1px;
   text-align: center;
   margin-bottom: 30px;
+  padding-top: 150px;
 }
 
 footer{
@@ -52,4 +53,8 @@ footer ul{
 footer ul li{
   float: right;
   margin-left: 15px;
+}
+
+#title_bg{
+  margin-top: -25px;
 }
