@@ -1,6 +1,23 @@
-<h1>Title: <%= @article.title %></h1>
-<h2>Description: <%= @article.description %></h2>
-
-<%= link_to 'Edit', edit_article_path(@article) %>
-<%= link_to 'Delete', article_path(@article), method: :delete, data: {confirm: "Are you sure?"} %>
-<%= link_to 'Back to article listing', articles_path %>
+<div class="row">
+  <div class="col-md-10 col-md-offset-1" >
+    <div class="well">
+      <h3 style="margin-top: 0px">
+        <div class="col-md-10" style="padding-left: 0px">
+          <strong><%= @article.title %></strong>
+        </div>
+        <div class="col-md-2" style="padding-right: 0px">
+          <%= link_to article_path(@article), title: "Delete", method: :delete, data: {confirm: "Are you sure?"} do %>
+              <span class="glyphicon glyphicon-remove text-danger" aria-label="Delete" style="float: right; padding-left: 5px"></span>
+          <% end %>
+          <%= link_to edit_article_path, title: "Edit" do %>
+            <span class="glyphicon glyphicon-edit text-success" aria-label="Edit" style="float: right; padding-left: 5px"></span>
+          <% end %>
+        </div>
+      </h3>
+      <br>
+      <hr style="border-top: 1px solid #000000" />
+      <%= simple_format(@article.description) %>
+    </div>
+    <%= link_to '[Return to article listing]', articles_path %>
+  </div>
+</div>
