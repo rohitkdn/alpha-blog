@@ -1,0 +1,15 @@
+<div class="form-group">
+  <%= f.text_field :username, class: "form-control", placeholder: "Username", autofocus: true %>
+</div>
+<div class="form-group">
+  <%= f.text_field :fullname, class: "form-control", placeholder: "Name", autofocus: true %>
+</div>
+<div class="form-group">
+  <%= f.email_field :email, class: "form-control", placeholder: "Email Address", autofocus: true %>
+</div>
+<div class="form-group">
+  <%= f.password_field :password, class: "form-control", placeholder: "Password ", autofocus: true %>
+</div>
+<div class="form-group">
+  <%= f.submit(@user.new_record? ? 'Signup' : 'Update Profile', class: "btn btn-primary btn-block") %>
+</div>

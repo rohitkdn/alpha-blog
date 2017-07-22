@@ -1,16 +1,10 @@
-<h1 class="center" style="margin-top: 0px; margin-bottom: 30px">Signup</h1>
+<h1 class="center" style="margin-top: 0px; margin-bottom: 30px">Edit your profile</h1>
 <div class="row" id="article_form">
   <div class="col-md-4 col-md-offset-4 col-xs-10 col-xs-offset-1">
     <%= render 'shared/errors', obj: @user %>
     <div class="well well-lg" >
       <%= form_for(@user, :html => {class: "form-horizontal", role: "form" }) do |f| %>
           <%= render :partial => 'form' , :locals => { :f => f } %>
-          <div class="form-group center">
-            <strong>OR</strong>
-          </div>
-          <div class="form-group">
-            <%= f.button 'Login', class: "btn btn-secondary btn-block"%>
-          </div>
       <% end %>
     </div>
   </div>
