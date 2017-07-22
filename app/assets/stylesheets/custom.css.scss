@@ -30,8 +30,21 @@ $navbar-inverse-bg: #000;
   padding-top: 150px;
 }
 
+.article-meta-details{
+  border-top: 1px solid #eaeaea;
+  margin-top: 15px;
+  padding-top: 5px;
+}
+
+.article-listing-title a:hover{
+  text-decoration: none;
+}
+
 #articles_all{
-  margin-bottom: 10px;
+  margin-bottom: 5px;
+  margin-left: 0px;
+  margin-right: 0px;
+
 }
 
 footer{
