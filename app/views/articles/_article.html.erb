@@ -15,12 +15,18 @@
                       <%= truncate(article.description, length: 100) %>
                     </p>
                     <div class="article-meta-details">
-                      <small> Created by:
+                      <small>
+                        By: <%= article.user.fullname %>
+                        <% if article.created_at != article.updated_at %>
+                          , last updated <%= time_ago_in_words(article.updated_at) %>
+                        <% end %>
+                        <br>
+                        Created at: <%= article.created_at.to_date %>
                       </small>
                     </div>
                   </div>
                   <div class="col-md-2">
-                    <% if(logged_in? && article.user == current_user) %>
+                    <% if logged_in? && (article.user == current_user || current_user.admin?) %>
                         <h3>
                           <%= link_to article_path(article), title: "Delete", method: :delete, data: {confirm: "Are you sure?"} do %>
                               <span class="glyphicon glyphicon-remove text-danger" aria-label="Delete" style="float: right; padding-left: 5px"></span>
