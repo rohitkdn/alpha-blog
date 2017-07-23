@@ -1,0 +1,11 @@
+<h2 align="center" ><strong><%= @user.fullname %>'s Blog</strong></h2><br>
+
+<div class="row">
+  <div class="col-md-offset-4 col-md-4 center" >
+    <%= gravatar_for @user, size: 150 %>
+  </div>
+</div>
+
+<h3 align="center" ><%= @user.username %></h3>
+
+<%= render 'articles/article', obj: @user.articles %>

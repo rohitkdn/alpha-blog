@@ -1,22 +1,42 @@
 <div class="row">
   <div class="col-md-10 col-md-offset-1" >
     <div class="well">
-      <h3 style="margin-top: 0px">
-        <div class="col-md-10" style="padding-left: 0px">
+      <div class="row " style="margin-bottom: 2px">
+        <h3 style="margin-top: 0px">
+        <div class="col-md-10">
           <strong><%= @article.title %></strong>
+          <div><small style="font-size: x-small">Last updated: <%= time_ago_in_words(@article.updated_at) %> ago</small></div>
         </div>
-        <div class="col-md-2" style="padding-right: 0px">
+        <div class="col-md-2" >
           <%= link_to article_path(@article), title: "Delete", method: :delete, data: {confirm: "Are you sure?"} do %>
               <span class="glyphicon glyphicon-remove text-danger" aria-label="Delete" style="float: right; padding-left: 5px"></span>
           <% end %>
           <%= link_to edit_article_path, title: "Edit" do %>
-            <span class="glyphicon glyphicon-edit text-success" aria-label="Edit" style="float: right; padding-left: 5px"></span>
+              <span class="glyphicon glyphicon-edit text-success" aria-label="Edit" style="float: right; padding-left: 5px"></span>
           <% end %>
         </div>
-      </h3>
-      <br>
-      <hr style="border-top: 1px solid #000000" />
-      <%= simple_format(@article.description) %>
+        </h3>
+      </div>
+      <div style="border-top: 1px solid #eaeaea" >
+        <div style="margin-top: 10px">
+          <%= simple_format(@article.description) %>
+        </div>
+      </div>
+
+      <div align="center" style="margin-top: 30px">
+        <small>Created by:</small>
+      </div>
+      <div align="center" style="margin-top: 5px">
+        <%= gravatar_for @article.user %>
+      </div>
+      <div align="center" style="margin-top: 5px">
+        <strong><%= link_to @article.user.username, user_path(@article.user) %></strong>
+      </div>
+      <div align="center" >
+        <small>
+          <%= pluralize(@article.user.articles.count, "article") if @article.user.articles %>
+        </small>
+      </div>
     </div>
     <%= link_to '[Return to article listing]', articles_path %>
   </div>

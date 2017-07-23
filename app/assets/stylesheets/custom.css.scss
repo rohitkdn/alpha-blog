@@ -36,12 +36,16 @@ $navbar-inverse-bg: #000;
   padding-top: 5px;
 }
 
+.list-group-item{
+  background-color: #f5f5f5;
+}
+
 .article-listing-title a:hover{
   text-decoration: none;
 }
 
 #articles_all{
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   margin-left: 0px;
   margin-right: 0px;
 

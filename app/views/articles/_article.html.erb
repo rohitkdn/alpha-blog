@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <% if obj.blank? %>
+      <h2 align="center">Oops! Nothing to display.</h2>
+    <% else %>
+
+          <div class="list-group">
+            <% obj.each do |article| %>
+                <div class="row list-group-item" id="articles_all"> <%#  %>
+                  <div class="col-md-10" >
+                    <h4>
+                      <strong class="article-listing-title"><%= link_to article.title, article_path(article) %></strong>
+                    </h4>
+                    <p>
+                      <%= truncate(article.description, length: 100) %>
+                    </p>
+                    <div class="article-meta-details">
+                      <small> Created by:
+                      </small>
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <h3>
+                      <%= link_to article_path(article), title: "Delete", method: :delete, data: {confirm: "Are you sure?"} do %>
+                          <span class="glyphicon glyphicon-remove text-danger" aria-label="Delete" style="float: right; padding-left: 5px"></span>
+                      <% end %>
+                      <%= link_to edit_article_path(article), title: "Edit" do %>
+                          <span class="glyphicon glyphicon-edit text-success" aria-label="Edit" style="float: right; padding-left: 5px"></span>
+                      <% end %>
+                    </h3>
+                  </div>
+                </div>
+            <% end %>
+          </div>
+
+    <% end %>
+  </div>
+</div>
