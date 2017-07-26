@@ -5,7 +5,7 @@
     <% if @users.blank? %>
         <h2 align="center">Oops! Nothing to display.</h2>
     <% else %>
-        <div class="list-group">
+        <div class="list-group article-listing-title">
           <% @users.each do |user| %>
               <%= link_to user_path(user) do %>
                   <div class="row list-group-item" id="articles_all" >
@@ -18,6 +18,10 @@
                       </h5>
                       <small>
                         <%= pluralize(user.articles.count, "article") if user.articles %>
+                        <br>
+                        <% if logged_in? and current_user.admin? %>
+                          <strong style="color: darkred"><%= link_to "Delete user", user_path(user), method: :delete %></strong>
+                      <% end %>
                       </small>
                     </div>
                   </div>

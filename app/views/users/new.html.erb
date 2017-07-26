@@ -9,7 +9,9 @@
             <strong>OR</strong>
           </div>
           <div class="form-group">
-            <%= f.button 'Log in', class: "btn btn-secondary btn-block"%>
+            <%= link_to login_path do %>
+                <button class="btn btn-secondary btn-block" style="color: black;">Log in</button>
+            <% end %>
           </div>
       <% end %>
     </div>
