@@ -14,12 +14,12 @@ gem 'puma', '~> 3.7'
 gem 'bcrypt', '~> 3.1.7'
 # Use SCSS for stylesheets
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
+gem 'uglifier', '>= 1.3.0'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'sass-rails', '~> 5.0'
 gem 'will_paginate', '~> 3.1.0'
 gem 'bootstrap-will_paginate', '0.0.10'
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
