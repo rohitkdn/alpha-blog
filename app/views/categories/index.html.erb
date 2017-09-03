@@ -9,13 +9,31 @@
           <% @categories.each do |category| %>
               <%= link_to category_path(category) do %>
                   <div class="row list-group-item" id="articles_all" >
-                    <div class="col-md-8" >
-                      <h4>
-                        <%= category.name %>
-                      </h4>
+                    <div class="col-md-8"  >
+                      <div class="row">
+                        <div class="col-md-2">
+                          <div class="badge" id="badge_index" style="margin-top: 10px" align="right">
+                            <%= category.articles.count %>
+                          </div>
+                        </div>
+                        <div class="col-md-10">
+                          <h4 style="font-weight: bold">
+                            <%= category.name %>
+                          </h4>
+                        </div>
+                      </div>
                     </div>
-                    <div class="badge" style="margin-top: 10px" align="right">
-                      <%= category.articles.count %>
+                    <div class="col-md-4">
+                      <% if logged_in? and current_user.admin? %>
+                          <h4>
+                            <%= link_to category_path(category), title: "Delete", method: :delete, data: {confirm: "Are you sure?"} do %>
+                                <span class="glyphicon glyphicon-remove text-danger" aria-label="Delete" style="float: right; padding-left: 5px"></span>
+                            <% end %>
+                            <%= link_to edit_category_path(category), title: "Edit" do %>
+                                <span class="glyphicon glyphicon-edit text-success" aria-label="Edit" style="float: right; padding-left: 5px"></span>
+                            <% end %>
+                          </h4>
+                      <% end %>
                     </div>
                   </div>
               <% end %>
