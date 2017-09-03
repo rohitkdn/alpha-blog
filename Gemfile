@@ -19,10 +19,14 @@ gem 'uglifier', '>= 1.3.0'
 gem 'turbolinks', '~> 5'
 gem 'coffee-rails', '~> 4.2'
 gem 'jbuilder', '~> 2.5'
+gem 'rb-fsevent', '0.9.8'
+gem 'minitest', '~> 5.10', '!= 5.10.2'
+
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
+  gem 'rails-controller-testing'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
