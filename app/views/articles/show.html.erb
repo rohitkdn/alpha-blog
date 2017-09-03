@@ -22,7 +22,12 @@
           <%= simple_format(@article.description) %>
         </div>
       </div>
-
+      <hr>
+      <small>
+        <% if @article.categories.any? %>
+            <p>Category: <%= render @article.categories %></p>
+        <% end %>
+      </small>
       <div align="center" style="margin-top: 30px">
         <small>Created by:</small>
       </div>
