@@ -8,6 +8,7 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.2'
+gem 'ruby', '~> 2.3.4'
 gem 'puma', '~> 3.7'
 gem 'bcrypt', '~> 3.1.7'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
