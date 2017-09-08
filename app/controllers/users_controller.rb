@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
 
   def index
-    @users = User.paginate(page: params[:page], per_page: 1)
+    @users = User.paginate(page: params[:page], per_page: 5).order(created_at: :desc)
   end
 
   def new
@@ -36,7 +36,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user_articles = @user.articles.paginate(page: params[:page], per_page: 1)
+    @user_articles = @user.articles.paginate(page: params[:page], per_page: 5).order(updated_at: :desc)
   end
 
   def destroy
