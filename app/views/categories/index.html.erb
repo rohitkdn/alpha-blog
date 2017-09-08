@@ -1,7 +1,7 @@
 <h1 align="center">Listing all categories</h1>
 
 <div class="row" style="margin-top: 30px">
-  <div class="col-xs-4 col-xs-offset-4 ">
+  <div class="col-md-4 col-md-offset-4 ">
     <% if @categories.blank? %>
         <h2 align="center">Oops! Nothing to display.</h2>
     <% else %>
@@ -9,21 +9,21 @@
           <% @categories.each do |category| %>
               <%= link_to category_path(category) do %>
                   <div class="row list-group-item" id="articles_all" >
-                    <div class="col-xs-8"  >
+                    <div class="col-md-8"  >
                       <div class="row">
-                        <div class="col-xs-2">
+                        <div class="col-md-2">
                           <div class="badge" id="badge_index" style="margin-top: 10px" align="right">
                             <%= category.articles.count %>
                           </div>
                         </div>
-                        <div class="col-xs-10">
+                        <div class="col-md-10">
                           <h4 style="font-weight: bold">
                             <%= category.name %>
                           </h4>
                         </div>
                       </div>
                     </div>
-                    <div class="col-xs-4">
+                    <div class="col-md-4">
                       <% if logged_in? and current_user.admin? %>
                           <h4>
                             <%= link_to category_path(category), title: "Delete", method: :delete, data: {confirm: "Are you sure?"} do %>
